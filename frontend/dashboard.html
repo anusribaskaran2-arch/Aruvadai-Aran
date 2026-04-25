@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>அறுவடை அரண் | டாஷ்போர்ட்</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-wrapper">
+  <header class="navbar glass-card">
+    <div class="brand">
+      🌾 <span>அறுவடை அரண்</span>
+    </div>
+    <nav>
+      <a href="home.html">முகப்பு • Home</a>
+      <a href="login.html">உள்நுழைவு • Login</a>
+      <a class="active" href="dashboard.html">டாஷ்போர்ட் • Dashboard</a>
+      <a href="contact.html">தொடர்பு • Contact</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="glass-card">
+      <h1 class="section-title">பயிர் & களஞ்சியம் மேலாண்மை</h1>
+      <p>உங்கள் அறுவடைத் தகவல்கள், சேமிப்பு இடங்கள் மற்றும் கிடைக்கும் கொள்ளளவை நேரடியாக கண்காணிக்கவும்.</p>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="glass-card form-card">
+        <div>
+          <h2>🌾 புதிய பயிர் பதிவு • Add Crop Details</h2>
+          <p>பயிர் நிலவரத்தை கண்காணிக்க கீழுள்ள விவரங்களை பதிவு செய்யவும்.</p>
+        </div>
+        <form id="cropForm">
+          <div>
+            <label for="cropName">பயிர் பெயர் • Crop Name</label>
+            <input type="text" id="cropName" name="cropName" placeholder="உதாரணம்: நெல்" required />
+          </div>
+          <div>
+            <label for="quantity">அளவு (kg) • Quantity</label>
+            <input type="number" id="quantity" name="quantity" placeholder="உதாரணம்: 250" min="0" step="1" required />
+          </div>
+          <div>
+            <label for="village">கிராமம் • Village</label>
+            <input type="text" id="village" name="village" placeholder="உங்கள் கிராமத்தின் பெயர்" required />
+          </div>
+          <button class="btn" type="submit">பதிவு செய்</button>
+        </form>
+      </div>
+
+      <div class="glass-card form-card">
+        <div>
+          <h2>🏠 களஞ்சியம் பதிவு • Add Storage</h2>
+          <p>கிடைக்கும் களஞ்சியம் மற்றும் கொள்ளளவை விவரிக்கும்.</p>
+        </div>
+        <form id="storageForm">
+          <div>
+            <label for="placeName">களஞ்சியத்தின் பெயர் • Storage Name</label>
+            <input type="text" id="placeName" name="placeName" placeholder="உதாரணம்: வைகை வேளாண் மையம்" required />
+          </div>
+          <div>
+            <label for="location">இடம் • Location</label>
+            <input type="text" id="location" name="location" placeholder="மாவட்டம், கிராமம்" required />
+          </div>
+          <div>
+            <label for="capacity">திறன் (kg) • Capacity</label>
+            <input type="number" id="capacity" name="capacity" placeholder="உதாரணம்: 1000" min="0" step="1" required />
+          </div>
+          <div>
+            <label for="contact">தொடர்பு எண் • Contact</label>
+            <input type="text" id="contact" name="contact" placeholder="தொலைபேசி எண்" required />
+          </div>
+          <button class="btn" type="submit">களஞ்சியம் சேர்க்கவும்</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="glass-card">
+        <header>
+          <h2>📋 சேமிக்கப்பட்ட பயிர்கள் • Stored Crops</h2>
+          <p>உங்கள் சமீபத்திய உள்ளீடுகள் இங்கே பட்டியலிடப்பட்டுள்ளன.</p>
+        </header>
+        <div class="table-wrapper">
+          <table id="cropTable">
+            <thead>
+              <tr>
+                <th>பயிர் • Crop</th>
+                <th>அளவு (kg)</th>
+                <th>கிராமம் • Village</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="3">தகவல் ஏற்றுகிறது…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <header>
+          <h2>🏡 கிடைக்கும் களஞ்சியங்கள் • Available Storages</h2>
+          <p>கிடைக்கும் இடம், தொடர்பு தகவல் மற்றும் நிலையைப் பார்வையிடவும்.</p>
+        </header>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>பெயர் • Name</th>
+                <th>இடம் • Location</th>
+                <th>திறன் (kg)</th>
+                <th>தொடர்பு</th>
+                <th>நிலை • Status</th>
+              </tr>
+            </thead>
+            <tbody id="storageTable">
+              <tr>
+                <td colspan="5">தகவல் ஏற்றுகிறது…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="glass-card">
+      <header>
+        <h2>📧 பயனர் தொடர்புகள் • Contact Submissions</h2>
+        <p>பயனர்களிடமிருந்து பெறப்பட்ட தொடர்பு செய்திகளை இங்கே பார்க்கலாம்.</p>
+        <button class="btn" onclick="loadContacts()" style="margin-top: 10px;">🔄 புதுப்பிக்க • Refresh</button>
+      </header>
+      <div class="table-wrapper">
+        <table id="contactTable">
+          <thead>
+            <tr>
+              <th>பெயர் • Name</th>
+              <th>மின்னஞ்சல் • Email</th>
+              <th>பிரச்சினை • Subject</th>
+              <th>செய்தி • Message</th>
+              <th>நிலை • Status</th>
+              <th>தேதி • Date</th>
+            </tr>
+          </thead>
+          <tbody id="contactTableBody">
+            <tr>
+              <td colspan="6">தகவல் ஏற்றுகிறது…</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    விவசாயிகளுக்கான டிஜிட்டல் பாதுகாப்பு • Digital protection for farmers<br />
+    <span>© 2025 அறுவடை அரண் • Crop intelligence for every village</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
